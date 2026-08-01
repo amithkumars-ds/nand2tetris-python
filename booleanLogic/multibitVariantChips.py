@@ -1,8 +1,8 @@
 from typing import Literal
 from booleanLogic.elementaryChips import Not, And, Or, Mux
-from utilities.utils import _check_length, _check_bits, bits_to_binary, binary_to_bits
+from utilities.utils import _check_length, _check_bits, bits_to_binary, binary_to_bits, Word8, Word16
 
-def Not16(a:int):
+def Not16(a:Word16):
     '''
     performs not operation on 16 bits
 
@@ -27,7 +27,7 @@ def Not16(a:int):
     out = binary_to_bits(not_a_bits)
     return out
 
-def And16(a:int, b:int):
+def And16(a:Word16, b:Word16):
     '''
     performs and operation on 16 bits
 
@@ -58,7 +58,7 @@ def And16(a:int, b:int):
     out = binary_to_bits(and_a_b_bits)
     return out
 
-def Or16(a:int, b:int):
+def Or16(a:Word16, b:Word16):
     '''
     performs or operation on 16 bits
 
@@ -89,7 +89,7 @@ def Or16(a:int, b:int):
     out = binary_to_bits(or_a_b_bits)
     return out
 
-def Mux16(a:int, b:int, sel:Literal[0,1]):
+def Mux16(a:Word16, b:Word16, sel:Literal['0','1']):
     '''
     16-bit 2:1 multiplexer - selects one of the inputs
 
