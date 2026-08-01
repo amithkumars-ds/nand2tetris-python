@@ -1,7 +1,7 @@
 from typing import Literal
-from utilities.utils import Nand, _check_bits
+from utilities.utils import Nand, _check_bits, Bit
 
-def Not(a: Literal[0,1]) -> Literal[0,1]:
+def Not(a:Bit) -> Bit:
     '''
     performs not operation on 1 bit
 
@@ -17,7 +17,7 @@ def Not(a: Literal[0,1]) -> Literal[0,1]:
     out = Nand(a=a,b=a)
     return out
 
-def And(a:Literal[0,1], b:Literal[0,1]) -> Literal[0,1]:
+def And(a:Bit, b:Bit) -> Bit:
     '''
     performs and operation on 2 bits
 
@@ -36,7 +36,7 @@ def And(a:Literal[0,1], b:Literal[0,1]) -> Literal[0,1]:
 
     return out
 
-def Or(a:Literal[0,1], b:Literal[0,1]) -> Literal[0,1]:
+def Or(a:Bit, b:Bit) -> Bit:
     '''
     performs or operation on 2 bits
 
@@ -56,7 +56,7 @@ def Or(a:Literal[0,1], b:Literal[0,1]) -> Literal[0,1]:
 
     return out
 
-def Xor(a:Literal[0,1], b:Literal[0,1]) -> Literal[0,1]:
+def Xor(a:Bit, b:Bit) -> Bit:
     '''
     performs Xor operation on 2 bits
 
@@ -78,7 +78,7 @@ def Xor(a:Literal[0,1], b:Literal[0,1]) -> Literal[0,1]:
 
     return out
 
-def Mux(a:Literal[0,1], b:Literal[0,1], sel:Literal[0,1]) -> Literal[0,1]:
+def Mux(a:Bit, b:Bit, sel:Bit) -> Bit:
     '''
     2:1 Multiplexer - selects one of the inputs
 
@@ -107,7 +107,7 @@ def Mux(a:Literal[0,1], b:Literal[0,1], sel:Literal[0,1]) -> Literal[0,1]:
 
     return out
 
-def DeMux(D: Literal[0,1], sel: Literal[0,1]) -> tuple[Literal[0,1], Literal[0,1]]:    
+def DeMux(D: Bit, sel: Bit) -> tuple[Bit, Bit]:    
     '''
     1:2  DeMultiplexer - splits input into 2 
     
