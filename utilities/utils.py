@@ -1,6 +1,15 @@
 from typing import Literal
 
-def Nand(a:Literal[0,1], b:Literal[0,1]) -> Literal[0,1]:  # the building block of this project
+# preset
+Bit = Literal['0','1']
+Word16 = str
+Word8 = str
+
+sel2 = Literal["00", "01", "10", "11"]
+sel3 = Literal["000", "001", "010", "011",
+               "100", "101", "110", "111"]
+
+def Nand(a:Bit, b:Bit) -> Bit:  # the building block of this project
     '''
     implementing a basic Nand gate
 
@@ -14,25 +23,22 @@ def Nand(a:Literal[0,1], b:Literal[0,1]) -> Literal[0,1]:  # the building block 
     
     _check_bits(a,b)
 
-    operation = not(a and b)
-    val = 1 if operation else 0
+    out = "0" if a == "1" and b == "1" else "1"
     
-    return val
+    return out
 
 def _check_bits(*bits: int) -> None:
-    if any(bit not in (0, 1) for bit in bits):
+    if any(bit not in ('0', '1') for bit in bits):
         raise ValueError("Values must be 0 or 1")
 
-def _check_length(bits:list, size: int) -> None:
+def _check_length(bits:str, size: int) -> None:
     if len(bits) != size:
         raise ValueError(f"Given input is not of length: {size}")
 
-def bits_to_binary(binary: int) -> list[int]:
-    bits = [int(bit) for bit in binary]
-    return bits
+def bits_to_binary(binary: str) -> list[str]:
+    _check_bits(*binary)
+    return list(binary)
 
-def binary_to_bits(bits: list[int]) -> int:
-    word = ''
-    for bit in bits:
-        word = word+str(bit)
-    return int(word)
+def binary_to_bits(bits: list[Bit]) -> Word16:
+    _check_bits(*bits)
+    return ''.join(bits)
