@@ -1,3 +1,9 @@
+import os
+import sys
+
+ROOT = os.path.abspath(os.path.join(os.path.dirname(__file__), ".."))
+sys.path.insert(0, ROOT)
+
 from booleanLogic.elementaryChips import Not, And, Or, Xor, Mux, DeMux
 from booleanLogic.multibitVariantChips import Not16, And16, Or16, Mux16
 from booleanLogic.multiWayVariantChips import Mux4Way16, Mux8Way16, DMux4Way, DMux8Way
