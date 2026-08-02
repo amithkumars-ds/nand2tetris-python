@@ -2,12 +2,12 @@ from booleanLogic.elementaryChips import Or, Not
 from booleanLogic.multibitVariantChips import Not16, And16 , Mux16
 from booleanLogic.multiWayVariantChips import Or8Way
 from booleanArithmetic.arithmeticChips import Add16
-from utilities.utils import Bit, Word16, Word16_zero
+from utilities.utils import BitType, Word16, Word16_zero
 
 def ALU(x:Word16, y:Word16, 
-        zx:Bit, nx:Bit, 
-        zy:Bit, ny:Bit, 
-        f:Bit, no:Bit) -> tuple[Word16, Bit, Bit]:
+        zx:BitType, nx:BitType, 
+        zy:BitType, ny:BitType, 
+        f:BitType, no:BitType) -> tuple[Word16, BitType, BitType]:
 
     # preprocess x
     zero_x = Word16_zero

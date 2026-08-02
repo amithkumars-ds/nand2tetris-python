@@ -1,6 +1,6 @@
 from booleanLogic.elementaryChips import Or, DeMux
 from booleanLogic.multibitVariantChips import Mux16
-from utilities.utils import Bit, _check_length, _check_bits, bits_to_binary, binary_to_bits, sel2, sel3, Word8, Word16
+from utilities.utils import BitType, _check_length, _check_bits, bits_to_binary, binary_to_bits, sel2, sel3, Word8, Word16
 
 def Or8Way(a:Word8):
     _check_length(a,8)
@@ -47,7 +47,7 @@ def Mux8Way16(a:Word16, b:Word16, c:Word16, d:Word16,
     return out
 
 
-def DMux4Way(D:Bit, sel:sel2) -> tuple[Bit, Bit, Bit, Bit]:
+def DMux4Way(D:BitType, sel:sel2) -> tuple[BitType, BitType, BitType, BitType]:
     _check_length(sel, 2)
     _check_bits(*sel)
     sel_bits = binary_to_bits(sel)
@@ -59,7 +59,7 @@ def DMux4Way(D:Bit, sel:sel2) -> tuple[Bit, Bit, Bit, Bit]:
     return a, b, c ,d
 
 
-def DMux8Way(D:Bit, sel:sel3) -> tuple[Bit, Bit, Bit, Bit,Bit, Bit, Bit, Bit]:
+def DMux8Way(D:BitType, sel:sel3) -> tuple[BitType, BitType, BitType, BitType,BitType, BitType, BitType, BitType]:
     _check_length(sel, 3)
     _check_bits(*sel)
     sel_bits = binary_to_bits(sel)

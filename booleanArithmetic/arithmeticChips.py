@@ -1,13 +1,13 @@
 from booleanLogic.elementaryChips import And, Or, Xor
-from utilities.utils import Bit, _check_length, _check_bits, bits_to_binary, binary_to_bits, Word8, Word16
+from utilities.utils import BitType, _check_length, _check_bits, bits_to_binary, binary_to_bits, Word8, Word16
 
-def HalfAdder(a: Bit, b: Bit) -> tuple[Bit, Bit]:
+def HalfAdder(a: BitType, b: BitType) -> tuple[BitType, BitType]:
     sum = Xor(a=a,b=b)
     carry = And(a=a,b=b)
 
     return sum, carry
 
-def FullAdder(a: Bit, b: Bit, c_in: Bit):
+def FullAdder(a: BitType, b: BitType, c_in: BitType):
     ab = And(a=a,b=b)
     bc_in = And(a=b,b=c_in)
     ac_in = And(a=a,b=c_in)

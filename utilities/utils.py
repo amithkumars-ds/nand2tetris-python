@@ -1,7 +1,7 @@
 from typing import Literal
 
 # preset
-Bit = Literal['0','1']
+BitType = Literal['0','1']
 Word16 = str
 Word8 = str
 
@@ -11,7 +11,7 @@ sel2 = Literal["00", "01", "10", "11"]
 sel3 = Literal["000", "001", "010", "011",
                "100", "101", "110", "111"]
 
-def Nand(a:Bit, b:Bit) -> Bit:  # the building block of this project
+def Nand(a:BitType, b:BitType) -> BitType:  # the building block of this project
     '''
     implementing a basic Nand gate
 
@@ -41,6 +41,6 @@ def bits_to_binary(binary: str) -> list[str]:
     _check_bits(*binary)
     return list(binary)
 
-def binary_to_bits(bits: list[Bit]) -> Word16:
+def binary_to_bits(bits: list[BitType]) -> Word16:
     _check_bits(*bits)
     return ''.join(bits)
