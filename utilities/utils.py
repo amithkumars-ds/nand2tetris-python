@@ -3,6 +3,7 @@ from typing import Literal
 # preset
 BitType = Literal['0','1']
 Word16 = str
+Word15 = str
 Word8 = str
 
 Word16_zero = '0000000000000000'

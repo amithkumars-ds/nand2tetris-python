@@ -1,2 +1,14 @@
 # tests 
 test.py
+
+# Python cache and byte-compiled files
+__pycache__/
+*.py[cod]
+*$py.class
+
+# Testing caches
+.pytest_cache/
+.mypy_cache/
+
+# system settings
+.vscode/
